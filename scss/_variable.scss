@@ -1,0 +1,161 @@
+$theme-color-dark: #2f3956;
+$theme-color-middle: #616f99;
+$theme-color-light: #ededed;
+
+//客戶按鈕主題風格
+@mixin btn-c {
+    padding: 12px 14px;
+    background: none;
+    color: #fff;
+    background-image: url(/img/btn.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+    transition: 0.2s;
+    &:hover {
+        background-image: url(/img/btn-b.png);
+        color: $theme-color-middle;
+    }
+}
+
+@mixin btn-c-none {
+    display: inline-block;
+    color: $theme-color-light;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 2;
+    position: relative;
+    z-index: 999;
+    &:hover::after {
+        content: '';
+        width: 116%;
+        height: 8px;
+        background-color: $theme-color-middle;
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        z-index: -1;
+    }
+}
+
+@mixin btn-c-none-child {
+    display: inline-block;
+    color: $theme-color-light;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 2;
+    position: relative;
+    &:hover::before {
+        content: '';
+        position: absolute;
+        background-color: $theme-color-middle;
+        background-position: center center;
+        width: 10px;
+        height: 10px;
+        left: 0;
+        top:50%;
+        transform:translateY(-50%);
+    }
+}
+
+//頁面小區塊範圍設定
+@mixin area-width {
+    max-width: 940px;
+    padding: 20px 10px 50px 10px;
+    margin: 0 auto;
+}
+
+@mixin h2 {
+    font-size: 36px;
+    line-height: 2;
+    text-align: center;
+}
+
+@mixin h3 {
+    font-size: 24px;
+    line-height: 1.8;
+    text-align: center;
+    padding: 20px 0;
+}
+@mixin h4 {
+    font-size: 20px;
+    line-height: 1.8;
+    padding: 20px 0;
+}
+
+@mixin h5 {
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: center;
+    padding: 20px 0;
+}
+
+@mixin h6 {
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 5px 0;
+}
+
+@mixin flex-col-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin flex-jcsb {
+    display: flex;
+    justify-content: space-between;
+}
+@mixin flex-jcsa {
+    display: flex;
+    justify-content: space-around;
+}
+@mixin flex-jcc {
+    display: flex;
+    justify-content: center;
+}
+@mixin flex-jcfs {
+    display: flex;
+    justify-content: flex-start;
+}
+
+//以圖取代文字//
+@mixin hide-text {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+//取消a連結底線樣式，改為行內區塊文字//
+@mixin a-inline {
+    text-decoration: none;
+    display: inline-block;
+}
+
+//文在上層圖在下，文字靠左，垂直置中//
+@mixin imgincludetext-left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(10%, -50%);
+    z-index: 99;
+}
+//文在上層圖在下，文字靠右，垂直置中//
+@mixin imgincludetext-rignt {
+    text-align: right;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-10%, -50%);
+    z-index: 99;
+}
+//文在上層圖在下，文字水平垂直都置中//
+@mixin imgincludetext-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+}
